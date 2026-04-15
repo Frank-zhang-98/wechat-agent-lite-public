@@ -1,0 +1,46 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="0.55" stop-color="#11294A"/>
+      <stop offset="1" stop-color="#0A6C7F"/>
+    </linearGradient>
+    <linearGradient id="card" x1="220" y1="120" x2="1040" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="rgba(255,255,255,0.14)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0.04)"/>
+    </linearGradient>
+    <filter id="shadow" x="150" y="70" width="980" height="500" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="25" flood-color="#020617" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <circle cx="1090" cy="118" r="180" fill="#22D3EE" fill-opacity="0.09"/>
+  <circle cx="180" cy="565" r="220" fill="#38BDF8" fill-opacity="0.08"/>
+  <circle cx="1180" cy="560" r="90" fill="#F8FAFC" fill-opacity="0.06"/>
+
+  <g filter="url(#shadow)">
+    <rect x="190" y="110" width="900" height="420" rx="28" fill="url(#card)" stroke="rgba(255,255,255,0.18)"/>
+  </g>
+
+  <rect x="244" y="166" width="158" height="36" rx="18" fill="#0F172A" fill-opacity="0.85" stroke="#67E8F9" stroke-opacity="0.4"/>
+  <text x="323" y="189" text-anchor="middle" fill="#CFFAFE" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">Workflow-first</text>
+
+  <text x="244" y="274" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="700">wechat-agent-lite</text>
+  <text x="244" y="336" fill="#BFDBFE" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="500">Daily article automation for WeChat Official Accounts</text>
+  <text x="244" y="392" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="22">
+    <tspan x="244" dy="0">Fetch topics, rank sources, build fact packs, write articles, plan visuals,</tspan>
+    <tspan x="244" dy="34">render publish-ready HTML, and ship observable WeChat drafts.</tspan>
+  </text>
+
+  <g>
+    <rect x="244" y="448" width="214" height="42" rx="21" fill="#22C55E" fill-opacity="0.16" stroke="#4ADE80" stroke-opacity="0.42"/>
+    <text x="351" y="475" text-anchor="middle" fill="#DCFCE7" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600">FastAPI + Scheduler</text>
+
+    <rect x="476" y="448" width="186" height="42" rx="21" fill="#38BDF8" fill-opacity="0.16" stroke="#7DD3FC" stroke-opacity="0.42"/>
+    <text x="569" y="475" text-anchor="middle" fill="#E0F2FE" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600">Runtime Metrics</text>
+
+    <rect x="680" y="448" width="194" height="42" rx="21" fill="#A78BFA" fill-opacity="0.16" stroke="#C4B5FD" stroke-opacity="0.42"/>
+    <text x="777" y="475" text-anchor="middle" fill="#EDE9FE" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600">WeChat Draft Flow</text>
+  </g>
+</svg>
