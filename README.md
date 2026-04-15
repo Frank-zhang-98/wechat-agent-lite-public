@@ -57,6 +57,24 @@ The goal is simple: **make daily AI-assisted publishing inspectable, recoverable
 - developers who want a reference architecture for content automation
 - teams that need observable runs, recoverable failures, and draft-first publishing
 
+## Project Scope
+
+`wechat-agent-lite` is intentionally scoped as a **workflow-first publishing system**.
+
+It focuses on:
+
+- running a repeatable daily article pipeline
+- keeping generation steps observable and recoverable
+- preparing draft-ready content for WeChat Official Accounts
+- staying deployable on modest infrastructure
+
+It is **not** trying to be:
+
+- a general-purpose autonomous agent framework
+- a multi-tenant CMS
+- a hosted SaaS publishing platform
+- a replacement for editorial review in high-risk publishing flows
+
 ## Design Principles
 
 - **workflow first**: model calls are embedded in a controlled runtime, not scattered across ad hoc scripts
@@ -168,6 +186,43 @@ wechat-agent-lite-public/
 - [Deployment](docs/deployment.md)
 - [Development](docs/development.md)
 
+## Development Workflow
+
+The repository is organized to keep runtime behavior inspectable and testable.
+
+Recommended local workflow:
+
+1. read the relevant service, graph node, or runtime module first
+2. make focused changes instead of broad cross-cutting rewrites
+3. run targeted tests under `tests/` for touched modules
+4. verify that public-safe defaults and config templates stay intact
+5. keep deployment-facing scripts generic and environment-neutral
+
+## Contributing
+
+Contributions are welcome if they preserve the repository's public-safe and workflow-first direction.
+
+Good contribution areas:
+
+- reliability and observability improvements
+- source handling and maintenance improvements
+- article quality improvements with explicit runtime visibility
+- documentation, testing, and deployment ergonomics
+
+Please avoid opening broad rewrites that:
+
+- turn the project into a generic agent platform
+- introduce environment-specific secrets or deployment assumptions
+- remove the draft-first publishing safety model
+- weaken runtime visibility in favor of opaque automation
+
+If you want to contribute, start with:
+
+- a clear problem statement
+- the affected runtime surface
+- test coverage or a reproducible validation path
+- documentation updates when behavior changes
+
 ## Privacy & Safety Notes
 
 This public package intentionally excludes:
@@ -185,6 +240,15 @@ If you package your own fork, keep the same rule: **commit code and templates, n
 - active runtime with web console, scheduler, metrics, and publishing flow
 - public package prepared for clean GitHub distribution
 - suitable as a base for private deployment or open experimentation
+
+## Non-goals
+
+At the current stage, this repository does not try to optimize for:
+
+- fully autonomous editorial decision-making
+- zero-touch production publishing without human review
+- broad plugin or MCP orchestration as a core architecture requirement
+- exhaustive support for every content channel beyond the WeChat-centered workflow
 
 ## Roadmap
 
