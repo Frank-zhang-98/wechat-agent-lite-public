@@ -8,13 +8,15 @@
 ![Playwright](https://img.shields.io/badge/Playwright-enabled-2EAD33?logo=playwright&logoColor=white)
 ![Status](https://img.shields.io/badge/status-active-2ea44f)
 
-> Lightweight daily article automation for WeChat Official Accounts.
+![wechat-agent-lite hero](assets/repo-hero.svg)
 
-`wechat-agent-lite` is a production-oriented content automation app for running a full daily article pipeline on a small server. It fetches topics, ranks candidates, enriches source material, writes an article, plans visuals, renders publish-ready HTML, creates a WeChat draft, and keeps the whole run observable through a web console.
+> Workflow-first article automation for WeChat Official Accounts.
+
+`wechat-agent-lite` is a production-oriented content automation app for running a full daily article pipeline on a small server. It fetches topics, ranks candidates, enriches source material, writes an article, plans visuals, renders publish-ready HTML, creates a WeChat draft, and keeps the entire workflow observable through a web console.
 
 ## Why This Exists
 
-This repository is not just a prompt pack or a shell script bundle. It is a small operating system for a repeatable publishing workflow:
+This repository is not just a prompt pack or a shell script bundle. It is a compact application for a repeatable publishing workflow:
 
 - scheduled health checks and main runs
 - source maintenance and repair
@@ -23,7 +25,7 @@ This repository is not just a prompt pack or a shell script bundle. It is a smal
 - draft publishing and daily reporting
 - token, latency, and storage visibility
 
-The design goal is simple: **make daily AI-assisted publishing inspectable, recoverable, and deployable**.
+The goal is simple: **make daily AI-assisted publishing inspectable, recoverable, and deployable**.
 
 ## Core Capabilities
 
@@ -40,7 +42,7 @@ The design goal is simple: **make daily AI-assisted publishing inspectable, reco
 
 ## Architecture
 
-The current runtime is organized around a graph-based article workflow plus an operations console.
+The runtime is organized around a graph-based article workflow plus an operations console.
 
 ```text
 Fetch Sources
@@ -57,12 +59,12 @@ Fetch Sources
 
 Key application surfaces:
 
-- `app/graphs/` — article generation graph and execution nodes
-- `app/runtime/` — runtime state, persistence, projections, graph runner
-- `app/agents/` — task-specific agents for classify, plan, write, title, evaluate, publish
-- `app/services/` — fetching, fact handling, title generation, visuals, pricing, settings, WeChat publishing
-- `app/templates/` — web console UI
-- `config/` — default layouts, sources, and writing templates
+- `app/graphs/` - article generation graph and execution nodes
+- `app/runtime/` - runtime state, persistence, projections, graph runner
+- `app/agents/` - task-specific agents for classify, plan, write, title, evaluate, and publish
+- `app/services/` - fetching, fact handling, title generation, visuals, pricing, settings, and WeChat publishing
+- `app/templates/` - web console UI
+- `config/` - default layouts, sources, and writing templates
 
 More detail: [docs/architecture.md](docs/architecture.md)
 
@@ -120,6 +122,7 @@ Default local console:
 ```text
 wechat-agent-lite-public/
 ├── app/
+├── assets/
 ├── config/
 ├── deploy/
 ├── docs/
@@ -146,21 +149,21 @@ This public package intentionally excludes:
 
 - personal or server-specific IP addresses
 - private deployment paths and release directories
-- API keys, tokens, secrets, app credentials, SMTP passwords
+- API keys, tokens, secrets, app credentials, and SMTP passwords
 - runtime databases, logs, cached outputs, and temporary artifacts
 - internal acceptance reports and operational snapshots
 
-If you are packaging your own fork, keep the same rule: **commit code and templates, not live environment state**.
+If you package your own fork, keep the same rule: **commit code and templates, not live environment state**.
 
 ## Roadmap
 
-- Improve evidence-backed writing and reduce unsupported expansion
-- Tighten title quality without coupling to article H1
-- Keep inline visual planning source-aware and render-safe
-- Preserve low-resource deployability while improving article quality
+- improve evidence-backed writing and reduce unsupported expansion
+- tighten title quality without coupling to article H1
+- keep inline visual planning source-aware and render-safe
+- preserve low-resource deployability while improving article quality
 
 ## Current Status
 
-- Active runtime with web console, scheduler, metrics, and publishing flow
-- Public package prepared for clean GitHub distribution
-- Suitable as a base for private deployment or open experimentation
+- active runtime with web console, scheduler, metrics, and publishing flow
+- public package prepared for clean GitHub distribution
+- suitable as a base for private deployment or open experimentation
