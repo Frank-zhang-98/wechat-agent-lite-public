@@ -14,9 +14,9 @@
 
 `wechat-agent-lite` is a production-oriented content automation app for running a full daily article pipeline on a small server. It fetches topics, ranks candidates, enriches source material, writes an article, plans visuals, renders publish-ready HTML, creates a WeChat draft, and keeps the entire workflow observable through a web console.
 
-## Why This Exists
+## Overview
 
-This repository is not just a prompt pack or a shell script bundle. It is a compact application for a repeatable publishing workflow:
+This repository is for teams or solo operators who want more than a prompt pack or a shell script bundle. It packages article generation as a repeatable application with:
 
 - scheduled health checks and main runs
 - source maintenance and repair
@@ -26,6 +26,17 @@ This repository is not just a prompt pack or a shell script bundle. It is a comp
 - token, latency, and storage visibility
 
 The goal is simple: **make daily AI-assisted publishing inspectable, recoverable, and deployable**.
+
+## What Ships
+
+| Area | Included in This Repository |
+| --- | --- |
+| Runtime App | FastAPI application, scheduler, persistence, metrics, and web console |
+| Generation Pipeline | Topic intake, ranking, fact preparation, writing, title generation, and visual planning |
+| Publishing Surface | WeChat draft creation and operational reporting |
+| Deployment Assets | Bootstrap scripts, systemd template, packaging helpers |
+| Tests | Focused unit and integration tests for the core runtime and services |
+| Documentation | Public getting-started, configuration, architecture, deployment, and development docs |
 
 ## Core Capabilities
 
@@ -39,6 +50,20 @@ The goal is simple: **make daily AI-assisted publishing inspectable, recoverable
 | Visual Pipeline | Plans inline visuals, cover prompts, and render-safe image assets |
 | Publishing | Creates WeChat drafts and preserves partial-success state when needed |
 | Console & Metrics | Exposes runs, steps, token usage, storage, and maintenance progress |
+
+## Who This Is For
+
+- operators running a daily or near-daily WeChat publishing workflow
+- developers who want a reference architecture for content automation
+- teams that need observable runs, recoverable failures, and draft-first publishing
+
+## Design Principles
+
+- **workflow first**: model calls are embedded in a controlled runtime, not scattered across ad hoc scripts
+- **small-server friendly**: designed to run on modest infrastructure with explicit storage and token visibility
+- **observable by default**: each run, step, and major cost surface can be inspected from the console
+- **draft before publish**: the system is optimized for safe draft generation, review, and staged rollout
+- **public-safe packaging**: this open repository excludes private environment state and deployment secrets
 
 ## Architecture
 
@@ -117,7 +142,7 @@ Default local console:
 
 - `http://127.0.0.1:8080`
 
-## Public Repo Structure
+## Repository Layout
 
 ```text
 wechat-agent-lite-public/
@@ -155,15 +180,15 @@ This public package intentionally excludes:
 
 If you package your own fork, keep the same rule: **commit code and templates, not live environment state**.
 
+## Project Status
+
+- active runtime with web console, scheduler, metrics, and publishing flow
+- public package prepared for clean GitHub distribution
+- suitable as a base for private deployment or open experimentation
+
 ## Roadmap
 
 - improve evidence-backed writing and reduce unsupported expansion
 - tighten title quality without coupling to article H1
 - keep inline visual planning source-aware and render-safe
 - preserve low-resource deployability while improving article quality
-
-## Current Status
-
-- active runtime with web console, scheduler, metrics, and publishing flow
-- public package prepared for clean GitHub distribution
-- suitable as a base for private deployment or open experimentation
